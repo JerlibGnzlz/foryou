@@ -59,13 +59,22 @@
         const textoPerfil = document.querySelector("p");
         const imagenPerfil = document.querySelector("#fotoPerfil");
         const body = document.querySelector("body");
-        const nombre = prompt("Cual es tu nombre").toUpperCase().substring(0, 15)
 
 
-        const identidadEnCristo = prompt(`${nombre} => Eres Hijo de Dios.? `).toLowerCase()
+        let nombre = prompt("Cual es tu nombre").toUpperCase().substring(0, 15)
 
-        let mensajeIdentidad;
-        let nuevaImagen;
+        let identidadEnCristo = prompt(`${nombre} => ¿Cuál es tu identidad en Cristo? (responde si o no)`).toLowerCase()
+
+
+        if (identidadEnCristo !== "si" && identidadEnCristo !== "no") {
+            alert("La identidad debe ser 'si' o 'no'. Por favor, ingresa una respuesta válida.");
+            // return;
+        }
+        else {
+            let nuevaImagen;
+            let mensajeIdentidad;
+        }
+
 
         if (identidadEnCristo === "no") {
             nuevaImagen = "./img/hijo.jpg"
@@ -79,8 +88,7 @@
             alert(
                 "Toda la informacion es necesaria para continuar 'Vuelve a intentarlo'"
             );
-        }
-        else {
+        } else {
             imagenPerfil.src = nuevaImagen
             textoPerfil.innerHTML = `<p style="text-align: justify"><span style="font-size: 1.5rem ;color:red">${mensajeIdentidad}</span>, Yo te elegí antes de que nacieras; te aparté para que hablaras en mi nombre a todas las naciones del  mundo.<br /><strong>Jeremías 1:5 TLA.</strong><br /><br />
                     Por tanto, no tengas miedo, pues yo soy tu Dios y estoy contigo. Mi mano victoriosa te dará fuerza y ayuda; mi mano victoriosa siempre te dará su apoyo.<br /> <strong>Isaías 41:10 TLA.</strong> <br /><br />
